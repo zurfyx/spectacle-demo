@@ -1,0 +1,26 @@
+/**
+ * @param {string} paragraph
+ * @param {string[]} banned
+ * @return {string}
+ */
+var mostCommonWord = function(paragraph, banned) {
+  const sBanned = new Set(banned);
+  const words = paragraph.replace(/[!?',;.]+/g, '').toLowerCase().split(' ');
+  
+  const count = {};
+  let maxWord;
+  let max = 0;
+  for (let i = 0; i < words.length; i += 1) {
+    const word = words[i];
+    if (sBanned.has(word)) {
+      continue;
+    }
+    count[word] = (count[word] || 0) + 1;
+    if (count[word] > max) {
+      max = count[word];
+      maxWord = word;
+    }
+  }
+  
+  return maxWord;
+};
