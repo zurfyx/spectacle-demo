@@ -148,6 +148,12 @@ export default class Presentation extends React.Component {
             <Image src="http://quotesnhumor.com/wp-content/uploads/2015/07/Top-30-Funny-Cat-Memes-Hilarious.jpg" height="400px" />
           </Slide>
         </Magic>
+        <Slide className={slideStyle} transition={['fade']} bgColor="secondary">
+          <BlockQuote>
+            <Quote>JavaScript is awesome</Quote>
+            <Cite>Everyone</Cite>
+          </BlockQuote>
+        </Slide>
       </Deck>
     );
   }
