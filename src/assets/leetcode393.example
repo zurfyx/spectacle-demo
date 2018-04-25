@@ -1,0 +1,34 @@
+var validUtf8 = function(data) {
+    const ONE = [0xF0, 0xE0, 0xC0, 0x80]; // or (0xF0 << 1) & 0xF0, (0xF0 << 2) & 0xF0, ...
+    const ZERO = [0x08, 0x10, 0x20, 0x40];
+    let rem = 0;
+    for (let i = 0; i < data.length; i += 1) {
+        const curr = data[i];
+        // rem > 0
+        if (rem > 0) {
+            if ((curr & ONE[3]) !== ONE[3]) {
+                return false;
+            }
+            if ((~curr & ZERO[3]) !== ZERO[3]) {
+                return false;
+            }
+            rem -= 1;
+            continue;
+        }
+        // rem === 0
+        for (let j = 0; j < 4; j += 1) {
+            if ((curr & ONE[j]) !== ONE[j]) {
+                continue;
+            }
+            if (j === 3) {
+                return false;
+            }
+            if ((~curr & ZERO[j]) !== ZERO[j]) {
+                return false;
+            }
+            rem = 3 - j;
+            break;
+        }
+    }
+    return rem === 0;
+};

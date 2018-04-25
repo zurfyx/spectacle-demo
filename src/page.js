@@ -34,7 +34,7 @@ export default class Page extends React.Component {
       <div>
         <div className={logo}>
           <div className={icon}><i className={`${iconFas} far fa-user`}></i></div>
-          <span className={label}>Interview prep.</span>
+          <span className={label}>Cool presentations</span>
         </div>
         <Presentation />
       </div>
