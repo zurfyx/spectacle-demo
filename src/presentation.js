@@ -36,7 +36,7 @@ const titleSlideClass = css`
 
 const contentSlideClass = css`
   height: 700px;
-  border: 1px solid red;
+  // border: 1px solid red; // DEV
 `;
 
 export default class Presentation extends Component {
