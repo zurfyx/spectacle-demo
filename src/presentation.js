@@ -1,19 +1,16 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { css } from 'react-emotion';
 
 // Import Spectacle Core tags
 import {
   BlockQuote,
   Cite,
   Deck,
-  Heading,
-  ListItem,
-  List,
   Quote,
   Slide,
-  Text,
   CodePane,
   Image,
+  Appear,
   Magic,
 } from 'spectacle';
 
@@ -23,11 +20,23 @@ import {
   Row,
 } from './components';
 import {
+  StyledHeading,
+  StyledList,
+  StyledListItem,
+  StyledParagraph,
   theme,
 } from './styled';
 
 // Require CSS
 require('normalize.css');
+
+const titleSlideClass = css`
+`;
+
+const contentSlideClass = css`
+  height: 700px;
+  border: 1px solid red;
+`;
 
 export default class Presentation extends React.Component {
   render() {
@@ -38,18 +47,18 @@ export default class Presentation extends React.Component {
         theme={theme}
         progress="none"
         controls={false}>
-        <Slide>
-          <Heading size={1} fit>
+        <Slide className={titleSlideClass}>
+          <StyledHeading size={1} textColor="tertiary" fit>
             Cool presentations
-          </Heading>
-          <Text margin="42px 0 0" textColor="grey" size={1}>
+          </StyledHeading>
+          <StyledParagraph>
             A Web Developer approach
-          </Text>
+          </StyledParagraph>
         </Slide>
-        <Slide>
-          <Heading size={4}>
+        <Slide className={contentSlideClass}>
+          <StyledHeading size={4}>
             Most common word
-          </Heading>
+          </StyledHeading>
           <CodePane
             lang="javascript"
             source={require('./assets/leetcode819.example')}
@@ -58,42 +67,33 @@ export default class Presentation extends React.Component {
             theme="external"
           />
         </Slide>
-        <Slide>
-          <Heading size={4}>
-            UTF-8 Validation
-          </Heading>
-          <CodePane
-            lang="javascript"
-            source={require('./assets/leetcode393.example')}
-            margin="42px auto"
-            overflow="overflow"
-            theme="external"
-          />
+        <Slide className={contentSlideClass}>
+          <Appear startValue={{ marginTop: '0px' }} endValue={{ marginTop: '-150px' }}>
+            <div>
+              <StyledHeading size={4}>
+                UTF-8 Validation
+              </StyledHeading>
+              <CodePane
+                lang="javascript"
+                source={require('./assets/leetcode393.example')}
+                margin="42px auto"
+                height="400px"
+              />
+            </div>
+          </Appear>
         </Slide>
-        <Slide bgColor="tertiary">
-          <Heading size={4} lineHeight={1} textColor="primary">
-            Most common word
-          </Heading>
-          <CodePane
-            lang="javascript"
-            source={require('./assets/leetcode393.example')}
-            margin="42px auto"
-            overflow = "overflow"
-            theme="external"
-          />
-        </Slide>
-        <Slide bgColor="primary">
+        <Slide className={contentSlideClass}>
           <Row className={css`margin: 42px auto;`}>
             <Column>
-              <Heading size={4} lineHeight={1} margin="42px 0" textAlign="left" textColor="secondary">
+              <StyledHeading size={4} margin="42px 0" textAlign="left" textColor="secondary">
                 Costs
-              </Heading>
-              {/* <List className={dashListStyle}>
-                <ListItem className={dashListItemStyle}>Item 1</ListItem>
-                <ListItem className={dashListItemStyle}>Item 2</ListItem>
-                <ListItem className={dashListItemStyle}>Item 3</ListItem>
-                <ListItem className={dashListItemStyle}>Item 4</ListItem>
-              </List> */}
+              </StyledHeading>
+              <StyledList>
+                <StyledListItem>Item 1</StyledListItem>
+                <StyledListItem>Item 2</StyledListItem>
+                <StyledListItem>Item 3</StyledListItem>
+                <StyledListItem>Item 4</StyledListItem>
+              </StyledList>
             </Column>
             <Column>
               <Image src="http://javascript-html5-tutorial.com/wp-contentgalleryfun-memes/coders-gonna-code-hell-yeah.png" />
@@ -101,20 +101,20 @@ export default class Presentation extends React.Component {
           </Row>
         </Slide>
         <Magic>
-          <Slide bgColor="primary">
-            <Heading size={4} lineHeight={1} margin="42px 0" textColor="secondary">
+          <Slide className={contentSlideClass}>
+            <StyledHeading size={4} lineHeight={1} margin="42px 0" textColor="secondary">
                 OMG Ponies
-            </Heading>
+            </StyledHeading>
             <Image src="https://s-media-cache-ak0.pinimg.com/originals/65/56/22/655622f0f143b92c764d7ddbe7f8d94e.jpg" height="400px" />
           </Slide>
-          <Slide bgColor="primary">
-            <Heading size={4} lineHeight={1} margin="42px 0" textColor="secondary">
+          <Slide className={contentSlideClass}>
+            <StyledHeading size={4} lineHeight={1} margin="42px 0" textColor="secondary">
                 Ponies OMG
-            </Heading>
+            </StyledHeading>
             <Image src="http://quotesnhumor.com/wp-content/uploads/2015/07/Top-30-Funny-Cat-Memes-Hilarious.jpg" height="400px" />
           </Slide>
         </Magic>
-        <Slide bgColor="secondary">
+        <Slide className={contentSlideClass} bgColor="secondary">
           <BlockQuote>
             <Quote>JavaScript is awesome</Quote>
             <Cite>Everyone</Cite>
@@ -124,24 +124,3 @@ export default class Presentation extends React.Component {
     );
   }
 }
-
-// const slideStyle = css`
-//   height: 700px;
-// `;
-
-// const headingStyle = css`
-// `;
-
-// const dashListStyle = css`
-//   list-style-type: none;
-// `;
-
-// const dashListItemStyle = css`
-//   padding-left: 1.1em;
-  
-//   &:before {
-//     content: "–"; /* en dash */
-//     position: absolute;
-//     margin-left: -1.1em;
-//   }
-// `;
