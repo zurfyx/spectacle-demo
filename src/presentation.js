@@ -64,7 +64,6 @@ export default class Presentation extends Component {
             lang="javascript"
             source={require('./assets/leetcode819.example')}
             margin="42px auto"
-            overflow="overflow"
             theme="external"
           />
         </Slide>
@@ -79,6 +78,7 @@ export default class Presentation extends Component {
                 source={require('./assets/leetcode393.example')}
                 margin="42px auto"
                 height="400px"
+                theme="external"
               />
             </div>
           </Appear>
