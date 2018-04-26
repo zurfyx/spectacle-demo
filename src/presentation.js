@@ -115,7 +115,7 @@ export default class Presentation extends Component {
             <Image src="http://quotesnhumor.com/wp-content/uploads/2015/07/Top-30-Funny-Cat-Memes-Hilarious.jpg" height="400px" />
           </Slide>
         </Magic>
-        <Slide className={contentSlideClass} bgColor="secondary">
+        <Slide className={contentSlideClass} transition={["fade"]} bgColor="secondary">
           <BlockQuote>
             <Quote>JavaScript is awesome</Quote>
             <Cite>Everyone</Cite>
