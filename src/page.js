@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Presentation from './presentation';
 
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 
 const PresentationTitleWrapper = styled('div')`
   position: absolute;

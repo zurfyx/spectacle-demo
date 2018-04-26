@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { css } from 'react-emotion';
+import { css } from 'react-emotion';
 
 // Import Spectacle Core tags
 import {
