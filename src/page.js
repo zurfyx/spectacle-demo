@@ -1,41 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Presentation from './presentation';
 
 import styled, { css } from 'react-emotion';
 
-const logo = css`
+const PresentationTitleWrapper = styled('div')`
   position: absolute;
   top: 0;
   left: 0;
   padding: 25px;
-  z-index: 42;
   font-size: 1.2rem;
   color: #c1c1c1;
+  z-index: 42;
 `;
 
-const icon = css`
+const IconWrapper = styled('div')`
   display: inline-block;
   margin-right: 15px;
-  line-height: 0.8rem;
   font-size: 0.8em;
+  line-height: 0.8rem;
 `;
 
-const iconFas = css`
+const Icon = styled('i')`
   padding-bottom: 2px;
 `;
 
-const label = css`
+const Label = styled('span')`
   display: inline-block;
 `;
 
-export default class Page extends React.Component {
+export default class Page extends Component {
   render() {
     return (
       <div>
-        <div className={logo}>
-          <div className={icon}><i className={`${iconFas} far fa-user`}></i></div>
-          <span className={label}>Cool presentations</span>
-        </div>
+        <PresentationTitleWrapper>
+          <IconWrapper><Icon className={`far fa-user`}></Icon></IconWrapper>
+          <Label>Cool presentations</Label>
+        </PresentationTitleWrapper>
         <Presentation />
       </div>
     );

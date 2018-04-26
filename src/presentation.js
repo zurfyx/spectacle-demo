@@ -1,5 +1,5 @@
-import React from 'react';
-import { css } from 'react-emotion';
+import React, { Component } from 'react';
+import styled, { css } from 'react-emotion';
 
 // Import Spectacle Core tags
 import {
@@ -30,6 +30,7 @@ import {
 // Require CSS
 require('normalize.css');
 
+// Custom one-time.
 const titleSlideClass = css`
 `;
 
@@ -38,7 +39,7 @@ const contentSlideClass = css`
   border: 1px solid red;
 `;
 
-export default class Presentation extends React.Component {
+export default class Presentation extends Component {
   render() {
     return (
       <Deck
