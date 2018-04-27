@@ -25,6 +25,7 @@ import {
   StyledListItem,
   StyledParagraph,
   theme,
+  color,
 } from './styled';
 
 // Require CSS

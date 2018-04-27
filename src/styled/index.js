@@ -3,7 +3,7 @@ import List from './List';
 import ListItem from './ListItem';
 import Paragraph from './Paragraph';
 import Text from './Text';
-import theme from './theme';
+import theme, { color, font } from './theme';
 
 export {
   Heading as StyledHeading,
@@ -11,5 +11,6 @@ export {
   ListItem as StyledListItem,
   Paragraph as StyledParagraph,
   Text as StyledText,
-  theme,
+  color,
+  font,
 };

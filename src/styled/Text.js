@@ -8,7 +8,7 @@ const StyledText = styled(Text)`
 export default function (props) {
   return (
     <StyledText
-      textColor="grey"
+      textColor="black"
       {...props}>
     </StyledText>
   )

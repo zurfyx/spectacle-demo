@@ -8,8 +8,8 @@ const StyledHeading = styled(Heading)`
 export default function (props) {
   return (
     <StyledHeading
-      textFont="primary"
-      textColor="secondary"
+      textFont="lato"
+      textColor="realBlack"
       {...props}>
     </StyledHeading>
   );

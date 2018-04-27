@@ -1,22 +1,27 @@
 import createTheme from 'spectacle/lib/themes/default';
 
-const theme = createTheme(
-  {
-    primary: 'white',
-    secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quartenary: '#CECECE',
-    black: '#333',
-    grey: '#4c4c4c',
-  },
-  {
-    primary: 'Lato',
-    secondary: 'Open Sans',
-    tertiary: 'Roboto',
-    quartenary: 'Montserrat',
-    quinary: 'Raleway',
-    senary: 'Playfair Display',
-  }
-);
+export const color = {
+  primary: '#fff',
+  white: '#fff',
+  realBlack: '#1f2022',
+  blue: '#03A9FC',
+  black: '#343434',
+  lightGrey: '#CECECE',
+  darkGrey: '#4c4c4c',
+};
 
-export default theme;
+export const font = {
+  primary: 'Open Sans',
+  opensans: 'Open Sans',
+  lato: 'Lato',
+  roboto: 'Roboto',
+  montserrat: 'Montserrat',
+  raleway: 'Raleway',
+  playfair: 'Playfair Display',
+  merriweather: 'Merriweather',
+};
+
+export default createTheme(
+  color,
+  font,
+);
