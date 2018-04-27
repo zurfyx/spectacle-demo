@@ -1,4 +1,6 @@
+import HackerHighlight from './HackerHighlight';
 import Heading from './heading';
+import Highlight from './Highlight';
 import Link from './Link';
 import List from './List';
 import ListItem from './ListItem';
@@ -10,7 +12,9 @@ import Text from './Text';
 import theme, { color, font } from './theme';
 
 export {
+  HackerHighlight as StyledHackerHighlight,
   Heading as StyledHeading,
+  Highlight as StyledHighlight,
   Link as StyledLink,
   List as StyledList,
   ListItem as StyledListItem,

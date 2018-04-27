@@ -2,6 +2,8 @@ import createTheme from 'spectacle/lib/themes/default';
 
 export const color = {
   primary: '#fff',
+  highlight: '#03a9fc',
+  highlightContrast: '#fff',
   separator: '#cecece',
   white: '#fff',
   realBlack: '#1f2022',
