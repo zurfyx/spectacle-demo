@@ -7,6 +7,7 @@ import theme, { color, font } from './theme';
 
 export {
   Heading as StyledHeading,
+  Link as StyledLink,
   List as StyledList,
   ListItem as StyledListItem,
   Paragraph as StyledParagraph,
