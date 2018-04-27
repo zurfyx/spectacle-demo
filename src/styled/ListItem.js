@@ -15,6 +15,6 @@ const StyledListItem = styled(ListItem)`
 
 export default function (props) {
   return (
-    <StyledListItem {...props}></StyledListItem>
+    <StyledListItem textSize="1em" {...props}></StyledListItem>
   );
 }

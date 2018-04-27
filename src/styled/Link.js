@@ -10,7 +10,7 @@ export default function (props) {
   const { href, ...textProps } = props;
   return (
     <StyledA href={href} target="_blank" rel="noopener">
-      <StyledText {...textProps} />
+      <StyledText textSize="1em" {...textProps} />
     </StyledA>
   );
 }
