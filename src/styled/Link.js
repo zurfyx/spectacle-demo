@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { StyledText } from '.';
+import StyledText from './Text';
 
 const StyledA = styled('a')`
   text-decoration: none;
